@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encrypt &amp; Decrypt</title>
+    <style>
+        @import url('css/passwordicons.css');
+        * {
+            font-family: 'Courier', monospace;
+            color: white;
+            outline: none;
+        }
+        html {
+            background-color: black;
+        }
+        input,textarea {
+            background-color: #101010;
+            border: 1px solid white;
+            padding: 0.75vh;
+        }
+        input[type=password] {
+            font-family: 'passwordicons' !important;
+        }
+        button {
+            background-color: #101010;
+            border: 1px solid white;
+            padding: 0.75vh;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Encrypt &amp; Decrypt</h1>
+    <h3><b>ENCRYPT</b></h3>
+    <form action="encrypt.php" onsubmit="return true;" method="post">
+        <p>Text to encrypt</p>
+        <textarea type="text" name="string" value="" required autocomplete="off"></textarea>
+        <p>Password to use</p>
+        <input type="password" name="password" required autocomplete="off">
+        <br>
+        <button onclick="passget()">ENCRYPT</button>
+    </form>
+    <h3><b>DECRYPT</b></h3>
+    <form action="decrypt.php" onsubmit="return true;" method="post">
+        <p>Encrypted Text</p>
+        <input type="text" name="string" required autocomplete="off">
+        <p>Password for text</p>
+        <input type="password" name="password" required autocomplete="off">
+        <br>
+        <button onclick="passget()">DECRYPT</button>
+    </form>
+    <p>No data stored. Runs on PHP 8. Uses AES-256-CBC.</p>
+    <h2>Changelog</h2>
+    <h3>v2.0.0</h3>
+    <ul>
+        <li>Upgraded to AES-256-CBC</li>
+        <li>Added support to still decrypt old AES-128 encrypted text</li>
+    </ul>
+</body></html>

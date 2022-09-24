@@ -1,2 +1,2 @@
-# encrypt
-An online service to encrypt all your files
+# Encrypt
+Encrypt your files. Online.
